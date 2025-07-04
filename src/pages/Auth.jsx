@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export default function AuthPage() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -24,35 +25,36 @@ export default function AuthPage() {
   ];
 
   const handleSignIn = (e) => {
-    e.preventDefault();
-    const matchedUser = credentials.find(
-      (user) => user.email === email && user.password === password
-    );
+  e.preventDefault();
+  const matchedUser = credentials.find(
+    (user) => user.email === email && user.password === password
+  );
 
-    if (matchedUser) {
-      localStorage.setItem("role", matchedUser.role);
-      localStorage.setItem("email", matchedUser.email);
+  if (matchedUser) {
+    Cookies.set("role", matchedUser.role, { expires: 1 }); // ✅ Save role as cookie for 1 day
+    Cookies.set("email", matchedUser.email);
 
-      switch (matchedUser.role) {
-        case "Admin":
-          navigate("/admin/dashboard");
-          break;
-        case "Operations Team":
-          navigate("/operation-team/dashboard");
-          break;
-        case "Technical Team":
-          navigate("/technical-team/dashboard");
-          break;
-        case "User":
-          navigate("/user/dashboard");
-          break;
-        default:
-          navigate("/unauthorized");
-      }
-    } else {
-      setError("Invalid credentials. Please try again.");
+    switch (matchedUser.role) {
+      case "Admin":
+        navigate("/admin/dashboard");
+        break;
+      case "Operations Team":
+        navigate("/operation-team/dashboard");
+        break;
+      case "Technical Team":
+        navigate("/technical-team/dashboard");
+        break;
+      case "User":
+        navigate("/user/dashboard");
+        break;
+      default:
+        navigate("/unauthorized");
     }
-  };
+  } else {
+    setError("Invalid credentials. Please try again.");
+  }
+};
+
 
   const handleSignUp = (e) => {
     e.preventDefault();

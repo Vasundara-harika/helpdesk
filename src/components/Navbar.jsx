@@ -4,6 +4,7 @@ import { MdDashboard } from "react-icons/md";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
+import Cookies from "js-cookie";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -70,12 +71,18 @@ export default function Navbar() {
         </button>
 
         <button
-          onClick={handleLogout}
-          className="flex items-center gap-1 bg-customMint text-white px-3 py-1.5 rounded hover:bg-[#45b5b0]"
-        >
-          <FiLogOut />
-          <span className="text-sm font-medium">Logout</span>
-        </button>
+  onClick={() => {
+    Cookies.remove("role");
+    Cookies.remove("email");
+    localStorage.clear(); // optional, if you stored anything else
+    navigate("/");
+  }}
+  className="flex items-center gap-1 bg-customMint text-white px-3 py-1.5 rounded hover:bg-[#45b5b0]"
+>
+  <FiLogOut />
+  <span className="text-sm font-medium">Logout</span>
+</button>
+
       </div>
     </header>
   );

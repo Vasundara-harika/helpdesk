@@ -1,15 +1,16 @@
-// ✅ src/routes/ProtectedRoute.jsx
 import { Navigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export default function ProtectedRoute({ children, allowedRoles }) {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const role = localStorage.getItem("role");
+  const role = Cookies.get("role");
 
-  if (!isLoggedIn) return <Navigate to="/login" />;
-
-  if (!allowedRoles.includes(role)) {
-    return <Navigate to="/unauthorized" />; // you can also create this page
+  if (!role) {
+    return <Navigate to="/" replace />; // 🔐 Not logged in → Sign In
   }
 
-  return children;
+  if (!allowedRoles.includes(role)) {
+    return <Navigate to="/unauthorized" replace />; // ❌ Wrong role
+  }
+
+  return children; // ✅ Allowed
 }
