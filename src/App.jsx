@@ -14,12 +14,12 @@ import UserLogins from "./pages/Admin/UserLogins";
 import UserProfileAdmin from "./pages/Admin/UserProfilePage";
 import UserSettingsPageAdmin from "./pages/Admin/UserSettingsPage";
 
-import OperationDashboard from "./pages/Operations/OperationsDashboard";
-import MyTicketsOp from "./pages/Operations/MyTicketsOp";
-import PerformancePage from "./pages/Operations/PerformancePage";
-import TicketApproval from "./pages/Operations/TicketApproval";
-import UserProfileOp from "./pages/Operations/UserProfilePage";
-import UserSettingsPageOp from "./pages/Operations/UserSettingsPage";
+import OperationDashboard from "./pages/operations/OperationsDashboard";
+import MyTicketsOp from "./pages/operations/MyTicketsOp";
+import PerformancePage from "./pages/operations/PerformancePage";
+import TicketApproval from "./pages/operations/TicketApproval";
+import UserProfileOp from "./pages/operations/UserProfilePage";
+import UserSettingsPageOp from "./pages/operations/UserSettingsPage";
 
 import TechnicalDashboard from "./pages/Technical/TechnicalDashboard";
 import Performance from "./pages/Technical/PerformanceTech";
