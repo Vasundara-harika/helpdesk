@@ -111,7 +111,7 @@ export default function App() {
         <Route path="profile/settings" element={<UserSettingsPageAdmin />} />
       </Route>
 
-      {/* Fallback route */}
+      {/* Catch-all Route */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

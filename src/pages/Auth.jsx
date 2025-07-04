@@ -1,7 +1,7 @@
+// src/pages/AuthPage.jsx
 import { useState } from "react";
 import { FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 
 export default function AuthPage() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -25,36 +25,35 @@ export default function AuthPage() {
   ];
 
   const handleSignIn = (e) => {
-  e.preventDefault();
-  const matchedUser = credentials.find(
-    (user) => user.email === email && user.password === password
-  );
+    e.preventDefault();
+    const matchedUser = credentials.find(
+      (user) => user.email === email && user.password === password
+    );
 
-  if (matchedUser) {
-    Cookies.set("role", matchedUser.role, { expires: 1 }); // ✅ Save role as cookie for 1 day
-    Cookies.set("email", matchedUser.email);
+    if (matchedUser) {
+      localStorage.setItem("role", matchedUser.role);
+      localStorage.setItem("email", matchedUser.email);
 
-    switch (matchedUser.role) {
-      case "Admin":
-        navigate("/admin/dashboard");
-        break;
-      case "Operations Team":
-        navigate("/operation-team/dashboard");
-        break;
-      case "Technical Team":
-        navigate("/technical-team/dashboard");
-        break;
-      case "User":
-        navigate("/user/dashboard");
-        break;
-      default:
-        navigate("/unauthorized");
+      switch (matchedUser.role) {
+        case "Admin":
+          navigate("/admin/dashboard");
+          break;
+        case "Operations Team":
+          navigate("/operation-team/dashboard");
+          break;
+        case "Technical Team":
+          navigate("/technical-team/dashboard");
+          break;
+        case "User":
+          navigate("/user/dashboard");
+          break;
+        default:
+          navigate("/unauthorized");
+      }
+    } else {
+      setError("Invalid credentials. Please try again.");
     }
-  } else {
-    setError("Invalid credentials. Please try again.");
-  }
-};
-
+  };
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -63,7 +62,6 @@ export default function AuthPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-customMint px-4">
-      {/* Toggle Buttons */}
       <div className="mb-6 flex gap-4">
         <button
           onClick={() => setIsSignIn(true)}
@@ -87,7 +85,6 @@ export default function AuthPage() {
         </button>
       </div>
 
-      {/* Flip Container */}
       <div className="w-full max-w-md perspective">
         <div
           className={`relative w-full transition-transform duration-700 transform-style-preserve-3d ${
@@ -119,14 +116,6 @@ export default function AuthPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <div className="text-right">
-                <a
-                  href="/forgot-password"
-                  className="text-sm text-customMint hover:underline"
-                >
-                  Forgot Password?
-                </a>
-              </div>
               {error && <p className="text-red-500 text-sm">{error}</p>}
               <button
                 type="submit"
@@ -151,38 +140,20 @@ export default function AuthPage() {
                 placeholder="Full Name"
                 className="form-input w-full border px-4 py-2 rounded"
                 required
-                value={signUpData.name}
-                onChange={(e) =>
-                  setSignUpData({ ...signUpData, name: e.target.value })
-                }
               />
               <input
                 type="email"
                 placeholder="Email"
                 className="form-input w-full border px-4 py-2 rounded"
                 required
-                value={signUpData.email}
-                onChange={(e) =>
-                  setSignUpData({ ...signUpData, email: e.target.value })
-                }
               />
               <input
                 type="password"
                 placeholder="Password"
                 className="form-input w-full border px-4 py-2 rounded"
                 required
-                value={signUpData.password}
-                onChange={(e) =>
-                  setSignUpData({ ...signUpData, password: e.target.value })
-                }
               />
-              <select
-                className="form-input w-full border px-4 py-2 rounded"
-                value={signUpData.role}
-                onChange={(e) =>
-                  setSignUpData({ ...signUpData, role: e.target.value })
-                }
-              >
+              <select className="form-input w-full border px-4 py-2 rounded">
                 <option value="User">User</option>
                 <option value="Technical Team">Technical Team</option>
                 <option value="Operations Team">Operations Team</option>
@@ -190,13 +161,10 @@ export default function AuthPage() {
               </select>
               <button
                 type="submit"
-                className="w-full bg-gray-400 text-white py-2 rounded cursor-not-allowed hover:bg-gray-500 transition"
+                className="w-full bg-gray-400 text-white py-2 rounded cursor-not-allowed"
               >
                 Sign Up (Disabled)
               </button>
-              <p className="text-sm text-customMint text-center">
-                Sign up is currently disabled
-              </p>
             </form>
           </div>
         </div>

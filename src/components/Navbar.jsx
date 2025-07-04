@@ -1,10 +1,10 @@
+// src/components/Navbar.jsx
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MdDashboard } from "react-icons/md";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
-import Cookies from "js-cookie";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -15,11 +15,6 @@ export default function Navbar() {
     const saved = localStorage.getItem("role") || "User";
     setRole(saved);
   }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("role");
-    navigate("/");
-  };
 
   const toggleMode = () => {
     setMode((prev) => (prev === "BM" ? "BI" : "BM"));
@@ -35,6 +30,11 @@ export default function Navbar() {
     } else if (role === "Technical Team") {
       navigate("/technical-team/profile");
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/");
   };
 
   return (
@@ -71,18 +71,12 @@ export default function Navbar() {
         </button>
 
         <button
-  onClick={() => {
-    Cookies.remove("role");
-    Cookies.remove("email");
-    localStorage.clear(); // optional, if you stored anything else
-    navigate("/");
-  }}
-  className="flex items-center gap-1 bg-customMint text-white px-3 py-1.5 rounded hover:bg-[#45b5b0]"
->
-  <FiLogOut />
-  <span className="text-sm font-medium">Logout</span>
-</button>
-
+          onClick={handleLogout}
+          className="flex items-center gap-1 bg-customMint text-white px-3 py-1.5 rounded hover:bg-[#45b5b0]"
+        >
+          <FiLogOut />
+          <span className="text-sm font-medium">Logout</span>
+        </button>
       </div>
     </header>
   );
