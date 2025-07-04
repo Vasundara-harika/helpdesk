@@ -10,30 +10,30 @@ export default function Navbar() {
   const [role, setRole] = useState("User");
   const [mode, setMode] = useState("BM");
 
-  const roles = ["User", "Operations Team", "Technical Support", "Admin"];
-
   useEffect(() => {
     const saved = localStorage.getItem("role") || "User";
     setRole(saved);
   }, []);
 
-  const handleRoleChange = (newRole) => {
-    setRole(newRole);
-    localStorage.setItem("role", newRole);
-
-    if (newRole === "Operations Team") {
-      navigate("/operation-team/dashboard");
-    } else if (newRole === "Technical Support") {
-      navigate("/technical-team/dashboard"); // ✅ Navigate to technical-team route
-    } else if (newRole === "Admin") {
-      navigate("/admin/dashboard");
-    } else {
-      navigate("/user/dashboard");
-    }
+  const handleLogout = () => {
+    localStorage.removeItem("role");
+    navigate("/");
   };
 
   const toggleMode = () => {
     setMode((prev) => (prev === "BM" ? "BI" : "BM"));
+  };
+
+  const goToProfile = () => {
+    if (role === "User") {
+      navigate("/user/profile");
+    } else if (role === "Admin") {
+      navigate("/admin/profile");
+    } else if (role === "Operations Team") {
+      navigate("/operation-team/profile");
+    } else if (role === "Technical Team") {
+      navigate("/technical-team/profile");
+    }
   };
 
   return (
@@ -44,17 +44,13 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-4 text-customMint text-xl">
-        <select
-          value={role}
-          onChange={(e) => handleRoleChange(e.target.value)}
-          className="bg-white border-2 border-customMint text-customMint font-medium rounded px-3 py-1 text-sm focus:outline-none hover:bg-customMint hover:text-white cursor-pointer transition duration-300"
-        >
-          {roles.map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-        </select>
+        <span className="font-medium text-sm">
+          {role === "Operations Team"
+            ? "Operations"
+            : role === "Technical Team"
+            ? "Technical"
+            : role}
+        </span>
 
         <button
           onClick={toggleMode}
@@ -66,7 +62,7 @@ export default function Navbar() {
         <IoMdNotificationsOutline className="cursor-pointer hover:text-[#45b5b0]" />
 
         <button
-          onClick={() => navigate("/user/profile")}
+          onClick={goToProfile}
           title="User Profile"
           className="hover:text-[#45b5b0]"
         >
@@ -74,7 +70,7 @@ export default function Navbar() {
         </button>
 
         <button
-          onClick={() => navigate("/")}
+          onClick={handleLogout}
           className="flex items-center gap-1 bg-customMint text-white px-3 py-1.5 rounded hover:bg-[#45b5b0]"
         >
           <FiLogOut />

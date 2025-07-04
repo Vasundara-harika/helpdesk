@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaSearch, FaStar, FaTimes, FaCommentDots } from "react-icons/fa";
-import ticketsData from "../data/tickets";
+import ticketsData from "../../data/tickets";
 
 export default function MyTickets() {
   const [tickets, setTickets] = useState([]);
