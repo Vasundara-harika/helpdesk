@@ -38,7 +38,7 @@ export default function Login() {
             type="submit"
             className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-2 rounded hover:scale-105 transition-transform"
           >
-            Sign In
+            Signnn In
           </button>
 
           <div className="text-sm text-center">
@@ -61,6 +61,21 @@ export default function Login() {
             </p>
           </div>
         </form>
+
+        {/* ------- LOGIN CREDENTIALS CARD -------- */}
+        <div className="mt-6 border-t pt-4">
+          <h3 className="text-center font-semibold text-purple-600 mb-3">Login Credentials</h3>
+
+          {/* ------- FLOATING LOGIN CREDENTIALS CARD -------- */}
+          <div className="absolute top-3 right-3 bg-gray-100 shadow-md rounded-lg p-3 text-xs w-40 border">
+            <h3 className="font-semibold text-purple-600 mb-2 text-center text-sm">Credentials</h3>
+            <p><b>Admin:</b><br />admin@helpdesk.com<br /><b>admin123</b></p>
+            <p className="mt-1"><b>Ops:</b><br />ops@helpdesk.com<br /><b>ops123</b></p>
+            <p className="mt-1"><b>Tech:</b><br />tech@helpdesk.com<br /><b>tech123</b></p>
+            <p className="mt-1"><b>User:</b><br />user@helpdesk.com<br /><b>user123</b></p>
+          </div>
+        </div>
+      
       </div>
     </div>
   );

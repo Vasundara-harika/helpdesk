@@ -63,6 +63,8 @@ export default function AuthPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-customMint px-4">
       <div className="mb-6 flex gap-4">
+
+        
         <button
           onClick={() => setIsSignIn(true)}
           className={`px-4 py-2 rounded font-semibold border ${
@@ -99,6 +101,9 @@ export default function AuthPage() {
             <div className="flex justify-center mb-4 text-2xl text-customMint">
               <FaLock />
             </div>
+            {/* Login Credentials Card */}
+
+
             <form onSubmit={handleSignIn} className="space-y-4">
               <input
                 type="email"
@@ -124,7 +129,25 @@ export default function AuthPage() {
                 Sign In
               </button>
             </form>
+
+            {/* ===== Login Credentials Box ===== */}
+{/* ===== Login Credentials Box ===== */}
+<div className="mt-6 border-t border-purple-200 pt-4 bg-white rounded-md p-3 shadow-md text-sm">
+  <h3 className="text-center font-semibold text-customMint mb-3">Login Credentials</h3>
+  <p><b>Admin:</b> admin@helpdesk.com | <b>admin123</b></p>
+  <p><b>Operations:</b> ops@helpdesk.com | <b>ops123</b></p>
+  <p><b>Technical:</b> tech@helpdesk.com | <b>tech123</b></p>
+  <p><b>User:</b> user@helpdesk.com | <b>user123</b></p>
+</div>
+
+
+            
+
+            
           </div>
+          
+
+          
 
           {/* Sign Up Card */}
           <div className="form-card rotate-y-180 absolute top-0 left-0">
@@ -166,6 +189,8 @@ export default function AuthPage() {
                 Sign Up (Disabled)
               </button>
             </form>
+
+             
           </div>
         </div>
       </div>
