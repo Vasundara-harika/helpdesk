@@ -2,7 +2,7 @@
 
 # Helpdesk: Ticket Management System
 
-**A professional, role-based platform that replaces messy email chains with a clear, automated workflow for company issues.**
+### A role-based platform that replaces messy email chains with a clear, structured workflow for handling issues
 
 ![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.0.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -10,8 +10,6 @@
 ![Express](https://img.shields.io/badge/Express-5.1.0-000000?style=for-the-badge&logo=express&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23-FF0055?style=for-the-badge&logo=framer&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)
-
-<br/>
 
 [Live Demo](https://helpdesk-ruddy-five.vercel.app/) · [GitHub](https://github.com/vasundara-harika/helpdesk) · [LinkedIn](https://www.linkedin.com/in/vasundara-harika)
 
@@ -21,90 +19,112 @@
 
 ## Screenshots
 
-| View | Screenshot |
-|:---:|:---:|
-| **Login Page** | <img src="./src/assets/Screenshot1.png" width="600"/> |
-| **Admin Page** | <img src="./src/assets/Screenshot2.png" width="600"/> |
-| **Operations Page** | <img src="./src/assets/Screenshot3.png" width="600"/> |
-| **Technical Page** | <img src="./src/assets/Screenshot4.png" width="600"/> |
-| **User Page** | <img src="./src/assets/Screenshot5.png" width="600"/> |
+<div align="center">
+<table>
+  <tr>
+    <td><img src="./src/assets/Screenshot1.png" width="280"/><br/><sub>Login Page</sub></td>
+    <td><img src="./src/assets/Screenshot2.png" width="280"/><br/><sub>Admin Dashboard</sub></td>
+    <td><img src="./src/assets/Screenshot3.png" width="280"/><br/><sub>Operations Panel</sub></td>
+  </tr>
+  <tr>
+    <td><img src="./src/assets/Screenshot4.png" width="280"/><br/><sub>Technical Dashboard</sub></td>
+    <td><img src="./src/assets/Screenshot5.png" width="280"/><br/><sub>User Dashboard</sub></td>
+  </tr>
+</table>
+</div>
 
 ---
 
 ## About
 
-**Helpdesk** is a centralized system designed to organize organizational problems into a clear lifecycle. Instead of lost emails, every issue becomes a trackable ticket.
+**Helpdesk** is a centralized ticket management system designed to bring clarity to organizational workflows.  
+Instead of scattered emails and confusion, every issue becomes a structured and trackable process.
 
-- **The Workflow:** Users raise issues &rarr; Operations filters & assigns them &rarr; Technical teams resolve them.
-- **The Security:** Built with **Role-Based Access Control (RBAC)**, ensuring each user sees a unique UI tailored to their specific job permissions.
-- **The Power:** Admins have total oversight, including a dedicated **Database View** to monitor every ticket and system log in the infrastructure.
+- **Clear Workflow:** User → Operations → Technical → Resolution  
+- **Role-Based Access (RBAC):** Each role sees a personalized UI  
+- **Full Visibility:** Admin monitors all tickets and system activity  
+
+---
+
+## How the System Works
+
+This system works like a real office where every role has a clear responsibility.
+
+- **User** raises issues and tracks progress  
+- **Operations Team** verifies and assigns requests  
+- **Technical Team** focuses on solving problems  
+- **Admin** oversees everything and ensures smooth operation  
 
 ---
 
 ## Features & Role-Based UI
 
 ### User (End-User)
-
-- [x] **Raise Tickets** — Submit new Technical or Operational requests.
-- [x] **Track Progress** — Real-time view of ticket status (Raised, In Progress, Closed).
+- Raise tickets for technical or operational issues  
+- Track status in real-time (Raised → In Progress → Closed)
 
 ### Operations Team
-
-- [x] **Approval** — Approve or Reject incoming tickets to keep the queue clean.
-- [x] **Assignment** — Categorize issues and assign them to specific technical experts.
+- Approve or reject incoming requests  
+- Categorize and assign tickets to the right team  
 
 ### Technical Team
-
-- [x] **Resolution** — Access a focused list of approved technical bugs.
-- [x] **Team Lead** — Create sub-teams and assign a "Person In Charge" (PIC) for complex fixes.
+- Work on approved technical issues  
+- Form teams and assign a lead (PIC)  
 
 ### Admin
-
-- [x] **Full Data Oversight** — Access the Global Database of all tickets.
-- [x] **Audit Logs** — View staff sign-in/out history and unauthorized access attempts.
+- Access all tickets across the system  
+- Monitor activity through audit logs  
 
 ---
 
 ## Tech Stack
 
-- **Frontend:** React 19 (Vite), Tailwind CSS, Framer Motion.
-- **Backend:** Express.js (Dedicated API for security logging).
-- **Routing:** React Router v7 (RBAC Guards).
+| Category | Technology |
+|----------|-----------|
+| **Frontend** | React 19 (Vite), Tailwind CSS, Framer Motion |
+| **Backend** | Express.js |
+| **Routing** | React Router v7 (RBAC Protected Routes) |
+| **Deployment** | Vercel |
 
 ---
 
 ## Project Structure
 
-```
+```text
 helpdesk/
-├── helpdesk-backend/     # Express API for activity & security logging
-├── public/               # Static assets & icons
+├── helpdesk-backend/     # Express API (activity & security logging)
+├── public/               # Static assets
 ├── src/
-│   ├── assets/           # Screenshot1 to Screenshot5
-│   ├── components/       # Reusable UI elements
-│   ├── data/             # Local mock database
-│   ├── layouts/          # UI shells (Admin, Ops, Tech, User)
-│   ├── pages/            # Role-specific dashboard logic
-│   ├── routes/           # RBAC ProtectedRoute logic
-│   └── styles/           # Global and component CSS
-├── tailwind.config.js    # Styling configuration
-└── vite.config.js        # Build tool settings
+│   ├── assets/           # Screenshots & images
+│   ├── components/       # Reusable UI components
+│   ├── data/             # Mock database
+│   ├── layouts/          # Role-based UI layouts
+│   ├── pages/            # Dashboard pages
+│   ├── routes/           # RBAC logic
+│   └── styles/           # Global styles
+├── tailwind.config.js
+└── vite.config.js
 ```
 
 ---
 
-## How to Run Locally
+## Getting Started
 
-### 1. Clone the Repository
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+#### 1. Clone the repository
 
 ```bash
 git clone https://github.com/vasundara-harika/helpdesk.git
 cd helpdesk
 ```
 
-### 2. Set Up the Backend
-
-Open a terminal and run:
+#### 2. Start Backend
 
 ```bash
 cd helpdesk-backend
@@ -112,23 +132,20 @@ npm install
 node index.js
 ```
 
-The server will start on `http://localhost:5000`.
+Backend runs on: `http://localhost:5000`
 
-### 3. Set Up the Frontend
-
-Open a **new terminal window** and run:
+#### 3. Start Frontend
 
 ```bash
-# Go back to the root folder
 npm install
 npm run dev
 ```
 
-The app will start on `http://localhost:5173`.
+Frontend runs on: `http://localhost:5173`
 
-### 4. Login Credentials
+---
 
-Use the following demo accounts to test the RBAC features:
+## Demo Credentials
 
 | Role | Email | Password |
 |:---|:---|:---|
@@ -139,14 +156,15 @@ Use the following demo accounts to test the RBAC features:
 
 ---
 
+## Developer
+
+**Vasundara Harika**  
+Final Year B.Tech Student | IIIT
+
 <div align="center">
 
-### Developer: [Vasundara Harika](https://github.com/vasundara-harika)
+Made with ❤️ to simplify real-world workflows
 
-**Final Year B.Tech Student | IIIT**
-
-If you found this useful, please star the repo!
-
-&copy; 2025 Helpdesk System. All rights reserved.
+⭐ Star this repo if you find it useful!
 
 </div>
