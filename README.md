@@ -69,7 +69,7 @@ This system works like a real office where every role has a clear responsibility
 
 ### 🛠️ Technical Team
 - Work on approved technical issues  
-- Form teams and assign a lead (PIC)  
+- Form teams and assign a lead 
 
 ### 🔑 Admin
 - Access all tickets across the system  
@@ -156,13 +156,13 @@ Frontend runs on: `http://localhost:5173`
 
 ---
 
-## � Note
+## 📝 Note
 
-> This frontend is built as a part of an assignment for a screening test.
+> This project was developed as part of a technical screening assignment to demonstrate frontend and system design skills.
 
 ---
 
-## �👩‍💻 Developer
+## 👩‍💻 Developer
 
 **Vasundara Harika**  
 Final Year B.Tech Student | IIIT
