@@ -1,6 +1,6 @@
 <div align="center">
 
-# Helpdesk: Ticket Management System
+# 🎫 Helpdesk: Ticket Management System
 
 ### A role-based platform that replaces messy email chains with a clear, structured workflow for handling issues
 
@@ -11,73 +11,73 @@
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23-FF0055?style=for-the-badge&logo=framer&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)
 
-[Live Demo](https://helpdesk-ruddy-five.vercel.app/) · [GitHub](https://github.com/vasundara-harika/helpdesk) · [LinkedIn](https://www.linkedin.com/in/vasundara-harika)
+[🌐 Live Demo](https://helpdesk-ruddy-five.vercel.app/) · [👩‍💻 GitHub](https://github.com/vasundara-harika/helpdesk) · [💼 LinkedIn](https://www.linkedin.com/in/vasundara-harika)
 
 </div>
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
 <div align="center">
 <table>
   <tr>
-    <td><img src="./src/assets/Screenshot1.png" width="280"/><br/><sub>Login Page</sub></td>
-    <td><img src="./src/assets/Screenshot2.png" width="280"/><br/><sub>Admin Dashboard</sub></td>
-    <td><img src="./src/assets/Screenshot3.png" width="280"/><br/><sub>Operations Panel</sub></td>
+    <td><img src="https://raw.githubusercontent.com/Vasundara-harika/helpdesk/main/src/assets/Screenshot1.png" width="280"/><br/><sub>Login Page</sub></td>
+    <td><img src="https://raw.githubusercontent.com/Vasundara-harika/helpdesk/main/src/assets/Screenshot2.png" width="280"/><br/><sub>Admin Dashboard</sub></td>
+    <td><img src="https://raw.githubusercontent.com/Vasundara-harika/helpdesk/main/src/assets/Screenshot3.png" width="280"/><br/><sub>Operations Panel</sub></td>
   </tr>
   <tr>
-    <td><img src="./src/assets/Screenshot4.png" width="280"/><br/><sub>Technical Dashboard</sub></td>
-    <td><img src="./src/assets/Screenshot5.png" width="280"/><br/><sub>User Dashboard</sub></td>
+    <td><img src="https://raw.githubusercontent.com/Vasundara-harika/helpdesk/main/src/assets/Screenshot4.png" width="280"/><br/><sub>Technical Dashboard</sub></td>
+    <td><img src="https://raw.githubusercontent.com/Vasundara-harika/helpdesk/main/src/assets/Screenshot5.png" width="280"/><br/><sub>User Dashboard</sub></td>
   </tr>
 </table>
 </div>
 
 ---
 
-## About
+## 📖 About
 
 **Helpdesk** is a centralized ticket management system designed to bring clarity to organizational workflows.  
 Instead of scattered emails and confusion, every issue becomes a structured and trackable process.
 
-- **Clear Workflow:** User → Operations → Technical → Resolution  
-- **Role-Based Access (RBAC):** Each role sees a personalized UI  
-- **Full Visibility:** Admin monitors all tickets and system activity  
+- 🔄 **Clear Workflow:** User → Operations → Technical → Resolution  
+- 🔐 **Role-Based Access (RBAC):** Each role sees a personalized UI  
+- 📊 **Full Visibility:** Admin monitors all tickets and system activity  
 
 ---
 
-## How the System Works
+## ✨ How the System Works
 
 This system works like a real office where every role has a clear responsibility.
 
-- **User** raises issues and tracks progress  
-- **Operations Team** verifies and assigns requests  
-- **Technical Team** focuses on solving problems  
-- **Admin** oversees everything and ensures smooth operation  
+- 👤 **User** raises issues and tracks progress  
+- ⚙️ **Operations Team** verifies and assigns requests  
+- 🛠️ **Technical Team** focuses on solving problems  
+- 🔑 **Admin** oversees everything and ensures smooth operation  
 
 ---
 
-## Features & Role-Based UI
+## 🚀 Features & Role-Based UI
 
-### User (End-User)
+### 👤 User (End-User)
 - Raise tickets for technical or operational issues  
 - Track status in real-time (Raised → In Progress → Closed)
 
-### Operations Team
+### ⚙️ Operations Team
 - Approve or reject incoming requests  
 - Categorize and assign tickets to the right team  
 
-### Technical Team
+### 🛠️ Technical Team
 - Work on approved technical issues  
 - Form teams and assign a lead (PIC)  
 
-### Admin
+### 🔑 Admin
 - Access all tickets across the system  
 - Monitor activity through audit logs  
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 | Category | Technology |
 |----------|-----------|
@@ -88,7 +88,7 @@ This system works like a real office where every role has a clear responsibility
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 helpdesk/
@@ -108,7 +108,7 @@ helpdesk/
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -145,7 +145,7 @@ Frontend runs on: `http://localhost:5173`
 
 ---
 
-## Demo Credentials
+## 🔐 Demo Credentials
 
 | Role | Email | Password |
 |:---|:---|:---|
@@ -156,7 +156,7 @@ Frontend runs on: `http://localhost:5173`
 
 ---
 
-## Developer
+## 👩‍💻 Developer
 
 **Vasundara Harika**  
 Final Year B.Tech Student | IIIT
