@@ -156,7 +156,13 @@ Frontend runs on: `http://localhost:5173`
 
 ---
 
-## 👩‍💻 Developer
+## � Note
+
+> This frontend is built as a part of an assignment for a screening test.
+
+---
+
+## �👩‍💻 Developer
 
 **Vasundara Harika**  
 Final Year B.Tech Student | IIIT
